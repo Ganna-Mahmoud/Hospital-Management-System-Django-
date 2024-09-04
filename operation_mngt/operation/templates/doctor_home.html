@@ -1,0 +1,229 @@
+{% include 'base.html' %}
+{% load static %}
+{% include 'navigation.html' %}
+
+<style>
+    body {
+        background-image: url('static/images/home.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    }
+    #home .container {
+    position: relative;
+    }
+
+    #home h1 {
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: #2c4964;
+    }
+
+    #home h2 {
+    color: #2c4964;
+    margin: 10px 0 0 0;
+    font-size: 24px;
+    }
+
+    #home .btn-get-started {
+    font-family: "Raleway", sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 11px;
+    letter-spacing: 1px;
+    display: inline-block;
+    padding: 12px 35px;
+    margin-top: 30px;
+    border-radius: 50px;
+    transition: 0.5s;
+    color: #fff;
+    background: #0e064c;
+    }
+
+    #home .btn-get-started:hover {
+    background: #0e064c;
+    }
+
+    @media (min-width: 1024px) {
+    #home {
+        background-attachment: fixed;
+    }
+    }
+
+    @media (max-width: 992px) {
+    #home {
+        margin-bottom: 0;
+        height: 100vh;
+    }
+    #home .container {
+        padding-bottom: 63px;
+    }
+    #home h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    #home h2 {
+        font-size: 18px;
+        line-height: 24px;
+        margin-bottom: 30px;
+    }
+    }
+
+    @media (max-height: 600px) {
+    #home {
+        height: 110vh;
+    }
+    }
+
+    /*--------------------------------------------------------------
+    # Featured Services
+    --------------------------------------------------------------*/
+    .featured-services .icon-box {
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+    transition: all 0.3s ease-in-out;
+    border-radius: 8px;
+    z-index: 1;
+    }
+
+    .featured-services .icon-box::before {
+    content: '';
+    position: absolute;
+    background: #d9f1f2;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 100%;
+    transition: all 0.3s;
+    z-index: -1;
+    }
+
+    .featured-services .icon-box:hover::before {
+    background: #3fbbc0;
+    top: 0;
+    border-radius: 0px;
+    }
+
+    .featured-services .icon {
+    margin-bottom: 15px;
+    }
+
+    .featured-services .icon i {
+    font-size: 48px;
+    line-height: 1;
+    color: #1977cc;
+    transition: all 0.3s ease-in-out;
+    }
+
+    .featured-services .title {
+    font-weight: 700;
+    margin-bottom: 15px;
+    font-size: 18px;
+    }
+
+    .featured-services .title a {
+    color: #111;
+    }
+
+    .featured-services .description {
+    font-size: 15px;
+    line-height: 28px;
+    margin-bottom: 0;
+    }
+
+    .featured-services .icon-box:hover .title a, .featured-services .icon-box:hover .description {
+    color: #fff;
+    }
+
+    .featured-services .icon-box:hover .icon i {
+    color: #fff;
+    }
+</style>
+<body>
+    <!-- ======= Home Section ======= -->
+    <section id="home" class="d-flex align-items-center">
+      <div class="container">
+        <a href="{% url 'Signup_Page' %}" class="btn-get-started scrollto float-right">Sign Up</a>
+        <a href="{% url 'Login_Page' %}" class="btn-get-started scrollto float-right">Login</a>
+        <h1> Operation Department <br> Healthcare</h1>
+        <h2>We are team of Specialized Doctors and Nurses.<br>"Your devotion and care bring healing, comfort and hope."</h2>
+        
+        
+        <a href="{% url 'view_doctor' %}" class="btn-get-started scrollto">View Doctor</a>
+        <a href="{% url 'add_doc' %}" class="btn-get-started scrollto">Add Doctor</a>
+        <br/>
+        <a href="{% url 'view_patient' %}" class="btn-get-started scrollto">View Patient </a>
+        <a href="{% url 'add_pat' %}" class="btn-get-started scrollto">Add Patient</a>
+        <br/>
+        <a href="{% url 'view_operation' %}" class="btn-get-started scrollto">View Operation </a>
+        <a href="{% url 'add_oper' %}" class="btn-get-started scrollto">Add Operation</a>
+        <a href="{% url 'about' %}" class="btn-get-started scrollto float-right">Learn More</a>
+       
+      </div>
+    </section><!-- End Home -->
+    <br>
+    <main id="main">
+
+    <!-- ======= Featured Services Section ======= -->
+    <section id="featured-services" class="featured-services">
+    <div class="container" data-aos="fade-up">
+
+        <div class="row">
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="fas fa-heartbeat"></i></div>
+            <h4 class="title"><a href=""> Normal checkup</a></h4>
+            <p class="description">Is a diagnostic examination of the entire body systems,
+                 including: examination of the heart, kidneys, liver, lungs, and all bones of the body,it should be done twice a month.</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="fas fa-dna"></i></div>
+            <h4 class="title"><a href="">Blood Test</a></h4>
+            <p class="description">The aim of the blood test is to measure the levels of the various substances
+                 present in it, such as the number of blood cells, 
+                 the concentration of salts, and the levels of other elements 
+                that would indicate the presence of pathological conditions.</p>
+            </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="fas fa-temperature-high"></i></div>
+            <h4 class="title"><a href="">Body temperature</a></h4>
+            <p class="description">The average body temperature is 98.6 F (37 C).
+                But the normal body temperature may range
+                from 97 F (36.1 C) to 99 F (37.2 C) or more.</p>
+            </div>
+        </div>
+
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="fa-solid fa-list"></i></div>
+            <h4 class="title"><a href="">Medicine Dose</a></h4>
+            <p class="description">taken at any time. The dose can also be expressed by the weight of the drug, 
+                 for example 250 mg. Or the volume of the drug solution, for example, 10 ml or 2 drops. The dose is given at the required frequency,
+                  whereby the person can give 2.5 ml twice a day or one tablet three times a day.
+                 Or the dose could be in the form of an injection, for example, once every four weeks.</p>
+            </div>
+        </div>
+
+        </div>
+
+    </div>
+    </section><!-- End Featured Services Section -->
+  </body>
+
+{% block content %}
+{% endblock content %}
+
+
+
+

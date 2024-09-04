@@ -1,0 +1,60 @@
+{% include 'base.html' %}
+{% load static %}
+{% include 'navigation.html' %}
+<style>
+    .mydivstyle:hover{
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+        transform: translateY(-20px);
+    }
+    hr.rounded{
+    border-top: 10px solid lightblue;
+    border-radius: 5px;
+    }
+</style>
+
+{% block content %}
+<h1 class="text-center">Admin Dashboard</h1>
+<br><br><br><br><br>
+
+<div class="'container">
+        <div class="row">
+            <div class="col-sm-4 mydivstyle" >
+                <h2 style="color: red ;" class="text-center">{{d}}</h2>
+                <a href="{% url 'view_doctor' %}">
+                    <h4 style="color:blue" class="text-center">Doctors</h4>
+                    <hr class="rounded">
+                </a>
+            </div>
+            <div class="col-sm-4 mydivstyle">
+                <h2 style="color: red ;" class="text-center">{{p}}</h2>
+                <a href="{% url 'view_patient' %}">
+                    <h4 style="color:blue" class="text-center">Patients</h4>
+                    <hr class="rounded">
+                </a>
+            </div>
+            <div class="col-sm-4 mydivstyle">
+                <h2 style="color: red ;" class="text-center">{{a}}</h2>
+                <a href="{% url 'view_operation' %}">
+                    <h4 style="color:blue" class="text-center">Operations</h4>
+                    <hr class="rounded">
+                </a>
+            </div>
+            <div class="col-sm-4 mydivstyle">
+                <h2 style="color: red ;" class="text-center">{{n}}</h2>
+                <a href="{% url 'view_nurse' %}">
+                    <h4 style="color:blue" class="text-center">Nurses</h4>
+                    <hr class="rounded">
+                </a>
+            </div>
+            <div class="col-sm-4 mydivstyle">
+                <h2 style="color: red ;" class="text-center">{{nl}}</h2>
+                <a href="{% url 'view_nurse_list' %}">
+                    <h4 style="color:blue" class="text-center">Nurses_List</h4>
+                    <hr class="rounded">
+                </a>
+            </div>
+        </div>
+
+</div>
+
+{% endblock %}
